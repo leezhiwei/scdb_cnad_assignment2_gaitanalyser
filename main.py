@@ -15,7 +15,6 @@ class StreamlitApp:
     def __init__(self):
         st.set_page_config(
         page_title="Gait Analyzer",
-        page_icon="./images/logo.png",
         initial_sidebar_state="collapsed")
         st.title("Gait Analyzer")
         # Set the sidebar for navigation
@@ -24,7 +23,6 @@ class StreamlitApp:
         st.sidebar.write("Built by Abishek Muthian. © 2023")
         st.sidebar.markdown("---") 
         
-        image = Image.open("./images/logo.png")
         st.caption(
             """
             Analyze your gait for health disorders at the comfort of your home.
@@ -86,65 +84,6 @@ class StreamlitApp:
 
         st.markdown("---") 
 
-        st.markdown(
-             """
-<iframe src="https://github.com/sponsors/abishekmuthian/card" title="Sponsor abishekmuthian" height="125" width="700" style="border: 0;"></iframe>
-             """, 
-             unsafe_allow_html=True, 
-             )
-        
-        st.markdown(
-            """
-            <a href="https://abishek.openpaymenthost.com/products/1-gait-analyzer-health-artificialintelligence" target="_blank">Don't have a GitHub account? Sponsor on Open Payment Host without any login!</a>    
-            """,
-            unsafe_allow_html=True
-            )
-        
-        st.markdown("---") 
-        
-        st.markdown(
-            """
-## Why
-
-Gait abnormalities can be attributed to various [musculoskeletal and neurological conditions](https://stanfordmedicine25.stanford.edu/the25/gait.html) and so gait analysis is being used as an important diagnostic tool by doctors.
-
-Automated gait analysis requires expensive motion capture or multiple-camera systems. But with Gait Analyzer one can analyze their gait in comfort and privacy of their home on their computer.
-
-## How
-
-Gait Analyzer implements the algorithm published in the paper titled [Automated Gait Analysis Based on a Marker-Free Pose Estimation Model](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10384445/).
-
-This algorithm for gait analysis is shown to be as reliable as a motion capture system for most scenarios.
-
-Gait Analyzer further uses Llama2 large language model to interpret the gait data to the end user in simple terms.
-
-## Features
-
-- Do gait analysis on videos locally on your computer.
-- Annotated video with pose-estimation.
-- Distances, Peaks and Minima plotted for each leg.
-- Displaying Gait data.
-- Download of gait data as .csv file.
-- Gait pattern explanation using Large Language Model.
-
-## Video Demo
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FcxCcRieKNA?si=FcxCcRieKNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-## Where are my videos stored?
-If you're using Gait Analyzer on [https://gaitanalyzer.health](https://gaitanalyzer.health) then the videos are stored in the server, 
-which might be used for research and improving Gait Analyzer.
-
-If you're running Gait Analyzer locally using [docker](https://hub.docker.com/r/abishekmuthian/gaitanalyzer) then the videos are stored on your computer.
-
-## How can I help?
-Sponsor the project and if you're a coder, You can try contributing to the Gait Analyzer [open-source](https://github.com/abishekmuthian/gaitanalyzer) project.
-Sponsor perks would be announced soon.
-            """,
-            unsafe_allow_html=True,
-        )
-        
-    # Download the dataframe as a .csv file    
     @staticmethod
     @st.cache_data
     def convert_df(df):
