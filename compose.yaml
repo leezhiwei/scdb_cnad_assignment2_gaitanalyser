@@ -1,6 +1,6 @@
 services:
   gaitanalyzer:
-    image: abishekmuthian/gaitanalyzer:latest
+    image: leezhiwei/gait_analysis
     container_name: gaitanalyzer
     network_mode: "host"
     volumes:
